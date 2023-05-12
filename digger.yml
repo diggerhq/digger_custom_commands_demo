@@ -7,6 +7,6 @@ workflows:
   myworkflow:
     plan:
       steps:
-      - run: source asd
+      - run: echo "HELLO WORLD"
         shell: bash
 
