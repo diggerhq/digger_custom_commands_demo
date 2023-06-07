@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    if: contains(github.event.comment.body, 'digger')
+    if:  ${{ github.event.pull_request || github.event.workflow_dispatch || (github.event.issue_comment && contains(github.event.comment.body, 'digger')) }}
     runs-on: ubuntu-latest
 
     steps:
