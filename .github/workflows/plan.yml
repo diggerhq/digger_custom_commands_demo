@@ -10,12 +10,11 @@ on:
 
 jobs:
   build:
-    if:  ${{ github.event.pull_request || github.event.workflow_dispatch || (github.event.issue_comment && contains(github.event.comment.body, 'digger')) }}
     runs-on: ubuntu-latest
 
     steps:
       - name: digger run
-        uses: diggerhq/digger@feat/support-shell
+        uses: diggerhq/digger@v0.1.22
         with:
           setup-aws: true
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
